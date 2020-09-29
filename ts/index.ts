@@ -1,24 +1,6 @@
-import {multiply} from './math-functions.js';
-import {Person} from './person.js';
-import {Circle, Square, isCircle, isSquare} from './figures.js';
+import {Circle, Square, isCircle} from './figures.js';
 
-console.log('multiplication', multiply(10, 27));
-
-const date = new Date();
-const test: boolean = true;
-
-
-let user: Person | null = null;
-user = {
-    name: 'Aleksey',
-    age: 34,
-};
-
-function buildName(firstName: string, lastName: string = "Smith"): string {
-    return firstName + " " + lastName;
-}
-
-function getArea(figure: Circle | Square): number {
+const getArea = (figure: Circle | Square) => {
     if (isCircle(figure)) {
         return Math.PI * Math.pow(figure.radius, 2);
     }
@@ -38,3 +20,8 @@ const circle: Circle = {
 
 const circleArea = getArea(circle);
 console.log('circle area', circleArea);
+
+// endless loop
+for (let i: number = 0; i < 10; ) {
+    console.log('hello!');
+}
